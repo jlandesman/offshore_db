@@ -12,7 +12,7 @@ legals AS
 	(SELECT DISTINCT document_id, street_number, street_name, unit 
 	 FROM real_property_legals)
 
-	SELECT master.document_id, name, street_number, street_name, unit, crfn, doc_type, doc_amount, pct_transferred party_type, good_through_date
+	SELECT master.document_id, name, street_number, street_name, unit, crfn, doc_type, doc_amount, pct_transferred, party_type, good_through_date
 	FROM master
 	LEFT JOIN parties
 		ON master.document_id = parties.document_id
