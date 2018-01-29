@@ -9,10 +9,10 @@ parties AS
 	 FROM real_property_parties 
 	 WHERE party_type > 1),
 legals AS 
-	(SELECT DISTINCT document_id, street_number, street_name, unit 
+	(SELECT DISTINCT document_id, street_number, street_name, unit, borough 
 	 FROM real_property_legals)
 
-	SELECT master.document_id, name, street_number, street_name, unit, crfn, doc_type, doc_amount, pct_transferred, party_type, good_through_date
+	SELECT master.document_id, name, street_number, street_name, unit, borough, crfn, doc_type, doc_amount, pct_transferred, party_type, good_through_date
 	FROM master
 	LEFT JOIN parties
 		ON master.document_id = parties.document_id
